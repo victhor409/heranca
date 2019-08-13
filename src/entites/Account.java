@@ -50,9 +50,9 @@ public class Account {
 	}
 	
 	public void Withdrow (double amount) {
-		 amount =- balance;
+		 balance -= amount + 5.0;
 	}
 	public void deposit (double amount) {
-		 amount =+ balance;
+		 amount += balance;
 	}
 }

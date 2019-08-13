@@ -8,8 +8,8 @@ public class SavingAccount extends Account {
 		super();
 	}
 
-	public SavingAccount(Double interestRate,Integer number, String holder, Double balance) {
-		super();
+	public SavingAccount(Integer number, String holder, Double balance,Double interestRate) {
+		super(number,holder,balance);
 		this.interestRate = interestRate;
 	}
 
@@ -24,5 +24,8 @@ public class SavingAccount extends Account {
 	public void updateBalance() {
 		balance += balance * interestRate;
 	}
-	
+	@Override
+	public void Withdrow (double amount) {
+		 balance -= amount;
+	}
 }

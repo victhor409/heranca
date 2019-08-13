@@ -13,33 +13,17 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Account acc = new Account(1001,"Alex",0.0);
-		BusinessAccount bcc = new BusinessAccount(500.00,"Maria",1002,0.0);
+		Account acc1 = new Account(1001,"Alex",1000.0);
+		acc1.Withdrow(200.0);
+		System.out.println(acc1.getBalance());
 		
-		//UPCASTING
+		Account acc2 = new SavingAccount(1002,"Maria",1000.0,0.01);
+		acc2.Withdrow(200.0);
+		System.out.println(acc2.getBalance());
 		
-		Account acc2 = bcc;
-		Account acc3 = new BusinessAccount(500.00,"Maria",1002,0.0);
-		Account acc4 = new SavingAccount(0.01,1004,"Bob",0.0);
-		
-		//DOWNCASTING
-		
-		BusinessAccount acc5 = (BusinessAccount)acc2;
-		
-		if (acc3 instanceof BusinessAccount) {
-			BusinessAccount acc6 = (BusinessAccount)acc2;
-			acc6.loan(200.00);
-			System.out.println("Loan");
-		}
-		
-		if (acc3 instanceof SavingAccount) {
-			SavingAccount acc7 = (SavingAccount)acc4;
-			acc7.updateBalance();
-			System.out.println("Update");
-			
-		}
-		
-		
+		Account acc3 = new BusinessAccount(1003,"Maria",1000.0,500.0);
+		acc3.Withdrow(200.0);
+		System.out.println(acc3.getBalance());
 		sc.close();
 
 	}

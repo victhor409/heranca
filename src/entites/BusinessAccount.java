@@ -8,12 +8,10 @@ public class BusinessAccount extends Account {
 		super();
 	}
 
-	public BusinessAccount(Double loaLimit,String holder,Integer number,Double balance) {
-		super();
+	public BusinessAccount(Integer number,String holder,Double balance,Double loaLimit) {
+		super(number, holder,balance);
 		this.loaLimit = loaLimit;
-		this.holder = holder;
-		this.number = number;
-		this.balance = balance;
+		
 	}
 
 	public Double getLoaLimit() {
@@ -28,5 +26,11 @@ public class BusinessAccount extends Account {
 		if (amount <= loaLimit) {
 		balance += amount - 10.0;
 		}
+	
+	}
+	@Override
+	public void Withdrow (double amount) {
+		 super.Withdrow(amount);	
+		 balance -= 2.0;
 	}
 }
